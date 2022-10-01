@@ -80,7 +80,9 @@
             3. Give each button a class of "modal-btn". 
             4. Make sure the form won't submit unless all fields are completed.  -->
             <button class="modal-btn" type="submit">Accept</button>
-            <button class="modal-btn">Decline</button>
+            <button class="modal-btn" type="button">Decline</button>
+            <!-- any button in the form will be defaulted to submit type, so even if "Decline" button didn't have the type="submit", when it was clicked, it will still submit. 
+            If a button in a form is given a type of "button" it will stop the default submit behavior.-->
           </div>
         </form>
       </div>

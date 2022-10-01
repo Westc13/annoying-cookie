@@ -63,3 +63,37 @@ consentForm.addEventListener("submit", function (e) {
   e.preventDefault();
   console.log("form submitted");
 });
+
+//TODO: Challenge
+// 1. Take control of the 'modal-text' element.
+// 2. Make it so that when a user clicks on the accept button, the HTML string below is inserted into the modal - text div.
+{
+  /* <div class="modal-inner-loading">
+  <img src="images/loading.svg" class="loading" alt="loading pink dots" />
+  <p id="uploadText">Uploading your data to the dark web...</p>
+</div>; */
+}
+
+const modalText = document.getElementById("modal-text");
+
+consentForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  modalText.innerHTML = ` <div class="modal-inner-loading">
+          <img
+            src="assets/loading.svg"
+            class="loading"
+            alt="loading pink dots"
+          />
+          <p id="upload-text">Uploading your data to the dark web...</p>
+        </div>
+        `;
+  setTimeout(() => {
+    // modalText.innerText = `Making the sale...`; // my solution
+    document.getElementById("upload-text").innerText = `Making the sale...`; // Scrimba solution
+  }, 1500);
+});
+
+//TODO: Challenge
+// 1. Use a setTimeout to make the phrase "Uploading your data to the dark web" change to "Making the sale..." after 1.5 seconds.
+// ⚠️ Do not change the loading svg!
+// In the event listener of consentForm add the setTimeout function - see above
