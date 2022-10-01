@@ -340,6 +340,10 @@ main {
   justify-content: center;
 }
 
+.modal-choice-btns-reverse {
+  flex-direction: row-reverse;
+}
+
 .modal-btn {
   padding: 10px 24px;
   cursor: pointer;
@@ -369,4 +373,9 @@ input {
   height: 140px;
   line-height: 23px;
   margin-bottom: 0;
+}
+
+.visibility-hidden {
+  position: absolute;
+  left: -5000px;
 }

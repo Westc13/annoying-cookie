@@ -53,6 +53,31 @@ modalCloseBtn.addEventListener("click", function () {
 });
 
 //TODO: Challenge
+/*   
+1. Take control of the decline btn. (What do you
+   need to do to make that possible?)
+2. Set up an eventListener that is triggered 
+   when a user's cursor hovers over the decline 
+   button. (Google the event to listen out for!)
+3. For now, just log out "hovered" when that 
+   happens. 
+*/
+const declineBtn = document.getElementById("decline-btn");
+const modalChoiceBtns = document.getElementById("modal-choice-btns");
+
+//TODO: Challenge
+/*   
+1. Take control of the div holding the buttons.
+2. In index.css, set up a selector for a new class
+   that uses flex-direction to reverse the order 
+   of its child elements.
+3. Toggle that class on the div holding the buttons 
+   when a user's cursor hovers over the decline button.
+*/
+declineBtn.addEventListener("mouseover", function () {
+  modalChoiceBtns.classList.toggle("modal-choice-btns-reverse");
+});
+//TODO: Challenge
 // 1. Take control of the form element.
 // 2. Add an eventListener to the form to listen for a 'submit' event.
 // 3. When a user clicks 'accept', prevent the default behavior that triggers the refresh.
