@@ -64,20 +64,27 @@ consentForm.addEventListener("submit", function (e) {
   console.log("form submitted");
 });
 
-//TODO: Challenge
-// 1. Take control of the 'modal-text' element.
-// 2. Make it so that when a user clicks on the accept button, the HTML string below is inserted into the modal - text div.
-{
-  /* <div class="modal-inner-loading">
-  <img src="images/loading.svg" class="loading" alt="loading pink dots" />
-  <p id="uploadText">Uploading your data to the dark web...</p>
-</div>; */
-}
-
 const modalText = document.getElementById("modal-text");
 
 consentForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
+  //TODO: Challenge
+  // 1. Inside the body of this event listener, create a const and set it equals to a new instance of FormData which takes in our HTML form element as a parameter.
+  // 2. Log out the const - hint just a FormData object.
+
+  const consentFormData = new FormData(consentForm);
+  console.log(consentFormData);
+
+  //TODO: Challenge
+  // 1. Take control of the 'modal-text' element.
+  // 2. Make it so that when a user clicks on the accept button, the HTML string below is inserted into the modal - text div.
+
+  /* <div class="modal-inner-loading">
+      <img src="images/loading.svg" class="loading" alt="loading pink dots" />
+      <p id="uploadText">Uploading your data to the dark web...</p>
+    </div>; */
+
   modalText.innerHTML = ` <div class="modal-inner-loading">
           <img
             src="assets/loading.svg"
@@ -87,10 +94,24 @@ consentForm.addEventListener("submit", function (e) {
           <p id="upload-text">Uploading your data to the dark web...</p>
         </div>
         `;
+
+  //TODO: Challenge
+  // 1. Use a setTimeout to make the phrase "Uploading your data to the dark web" change to "Making the sale..." after 1.5 seconds.
+  // ⚠️ Do not change the loading svg!
+  // In the event listener of consentForm add the setTimeout function
+
   setTimeout(() => {
     // modalText.innerText = `Making the sale...`; // my solution
     document.getElementById("upload-text").innerText = `Making the sale...`; // Scrimba solution
   }, 1500);
+
+  //TODO: Challenge
+  // 1. Make it so that 1.5 seconds after seeing the "Making the sale..." message, the modal is cleared of its content and the following string of HTML is displayed instead.
+  // `<h2>Thanks you sucker!</h2>
+  // <p>We just sold the rights to your eternal soul.</p>
+  // <div class="idiot-gif">
+  // <img src="assets/pirate.gif">
+  // </div>`
   setTimeout(() => {
     document.getElementById(
       "modal-inner"
@@ -101,16 +122,3 @@ consentForm.addEventListener("submit", function (e) {
     </div>`;
   }, 3000);
 });
-
-//TODO: Challenge
-// 1. Use a setTimeout to make the phrase "Uploading your data to the dark web" change to "Making the sale..." after 1.5 seconds.
-// ⚠️ Do not change the loading svg!
-// In the event listener of consentForm add the setTimeout function - see above
-
-//TODO: Challenge
-// 1. Make it so that 1.5 seconds after seeing the "Making the sale..." message, the modal is cleared of its content and the following string of HTML is displayed instead.
-// `<h2>Thanks you sucker!</h2>
-// <p>We just sold the rights to your eternal soul.</p>
-// <div class="idiot-gif">
-// <img src="assets/pirate.gif">
-// </div>`
