@@ -74,7 +74,12 @@ consentForm.addEventListener("submit", function (e) {
   // 2. Log out the const - hint just a FormData object.
 
   const consentFormData = new FormData(consentForm);
-  console.log(consentFormData);
+
+  //TODO: Challenge
+  // 1. Create a const to store the user's name and use a FormData method to extract the submitted name from the FormData object.
+  // 2. Insert the user's name into the HTML string that contains the final message we shouw our users.
+
+  const userName = consentFormData.get("name");
 
   //TODO: Challenge
   // 1. Take control of the 'modal-text' element.
@@ -115,7 +120,7 @@ consentForm.addEventListener("submit", function (e) {
   setTimeout(() => {
     document.getElementById(
       "modal-inner"
-    ).innerHTML = `<h2>Thanks you sucker!</h2>
+    ).innerHTML = `<h2>Thanks <span class="modal-display-name">${userName}</span> you sucker!</h2>
     <p>We just sold the rights to your eternal soul.</p>
     <div class="idiot-gif">
         <img src="assets/pirate.gif">
