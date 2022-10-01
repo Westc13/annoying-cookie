@@ -121,9 +121,15 @@ consentForm.addEventListener("submit", function (e) {
     document.getElementById(
       "modal-inner"
     ).innerHTML = `<h2>Thanks <span class="modal-display-name">${userName}</span> you sucker!</h2>
-    <p>We just sold the rights to your eternal soul.</p>
-    <div class="idiot-gif">
-        <img src="assets/pirate.gif">
-    </div>`;
+          <p>We just sold the rights to your eternal soul.</p>
+          <div class="idiot-gif">
+          <img src="assets/pirate.gif">
+          </div>`;
+
+    //TODO: Challenge:
+    // 1. Make the button that closes the modal disabled.
+    // 2. Make that button become usable when the final
+    //    modal message has been displayed to the user.
+    modalCloseBtn.disabled = false;
   }, 3000);
 });
